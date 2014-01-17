@@ -3,8 +3,8 @@ dotvotejs
 
 Build the project with the following command:
 
-`grunt build
+`grunt build`
 
 Install the webapp dependencies with the following command:
 
-`grunt install
+`grunt install`
