@@ -1,0 +1,26 @@
+{
+  "name": "dotvote",
+  "version": "0.0.0",
+  "homepage": "https://github.com/KyorCode/dotvotejs",
+  "authors": [
+    "kyorcode <t-c@live.be>"
+  ],
+  "description": "dotvote",
+  "main": "src/server.js",
+  "keywords": [
+    "dotvote"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ],
+  "devDependencies": {
+    "mocha": "~1.17.0",
+    "sinon": "~1.7.3",
+    "chai": "~1.8.1"
+  }
+}

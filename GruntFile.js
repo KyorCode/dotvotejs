@@ -69,6 +69,17 @@ module.exports = function(grunt) {
             }
         },
         bower: {
+            tests:{
+              options:{
+                  base:'./test',
+                  install: true,
+                  cleanTargetDir : true,
+                  layout : 'byComponent',
+                  overrideBowerDirectory : true,
+                  copy: false,
+                  cwd: './test'
+              }  
+            },
             webapp: {
                 options: {
                     base: './public',
@@ -109,5 +120,5 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build', ['jshint', 'less:build', 'uglify:build', 'markdown:all']);
     grunt.registerTask('watchit', ['concurrent'])
-    grunt.registerTask('install', ['bower:webapp']);
+    grunt.registerTask('install', ['bower:webapp','bower:tests']);
 };
