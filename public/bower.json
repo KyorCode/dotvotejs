@@ -1,0 +1,17 @@
+{
+  "name": "dotvote",
+  "version": "0.0.0",
+  "homepage": "https://github.com/KyorCode/dotvotejs",
+  "authors": [
+    "kyorcode <t-c@live.be>"
+  ],
+  "description": "Dotvote",
+  "main": "dotvote.js",
+  "keywords": [
+    "dotvote"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*"
+  ]
+}
