@@ -2,3 +2,4 @@ node_modules/
 docs/
 public/lib
 public/css
+test/lib
