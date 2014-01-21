@@ -69,16 +69,16 @@ module.exports = function(grunt) {
             }
         },
         bower: {
-            tests:{
-              options:{
-                  base:'./test',
-                  install: true,
-                  cleanTargetDir : true,
-                  layout : 'byComponent',
-                  overrideBowerDirectory : true,
-                  copy: false,
-                  cwd: './test'
-              }  
+            tests: {
+                options: {
+                    base: './test/client',
+                    install: true,
+                    cleanTargetDir: true,
+                    layout: 'byComponent',
+                    overrideBowerDirectory: true,
+                    copy: false,
+                    cwd: './test/client'
+                }
             },
             webapp: {
                 options: {
@@ -102,11 +102,25 @@ module.exports = function(grunt) {
             less: {
                 files: ['src/styles/*.less'],
                 tasks: ['less:build'],
-                options:{
-                    spawn:true
+                options: {
+                    spawn: true
                 }
             }
-        }
+        },
+        mocha: {
+            client: {
+                files: ['test/ClientTestRunner.html'],
+                options: {
+                    reporter: 'Spec'
+                }
+            },
+            server:{
+                files:['test/ServerTestRunner.html'],
+                options:{
+                    reporter: 'Spec'
+                }
+            }
+        },
     });
 
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -117,8 +131,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-bower-task');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-concurrent');
+    grunt.loadNpmTasks('grunt-mocha');
 
     grunt.registerTask('build', ['jshint', 'less:build', 'uglify:build', 'markdown:all']);
     grunt.registerTask('watchit', ['concurrent'])
-    grunt.registerTask('install', ['bower:webapp','bower:tests']);
+    grunt.registerTask('install', ['bower:webapp', 'bower:tests']);
+    grunt.registerTask('tests', ['mocha:client','mocha:server']);
 };
